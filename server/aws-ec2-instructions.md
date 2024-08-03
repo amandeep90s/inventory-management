@@ -104,25 +104,25 @@ pm2 start ecosystem.config.js
 
 - **Useful pm2 commands:**
 
-    - **Stop all processes:**
+  - **Stop all processes:**
 
   ```
   pm2 stop all
   ```
 
-    - **Delete all processes:**
+  - **Delete all processes:**
 
   ```
   pm2 delete all
   ```
 
-    - **Check status of processes:**
+  - **Check status of processes:**
 
   ```
   pm2 status
   ```
 
-    - **Monitor processes:**
+  - **Monitor processes:**
 
   ```
   pm2 monit
