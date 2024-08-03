@@ -2,8 +2,9 @@
 
 import {useAppDispatch, useAppSelector} from '@/app/redux';
 import {setIsSidebarCollapsed} from '@/state';
-import {Menu} from 'lucide-react';
+import {Archive, CircleDollarSign, Clipboard, Layout, Menu, SlidersHorizontal, User} from 'lucide-react';
 import React from 'react';
+import SidebarLink from "./SidebarLink";
 
 const Sidebar = () => {
   const dispatch = useAppDispatch();
@@ -32,10 +33,17 @@ const Sidebar = () => {
       </div>
 
       {/* LINKS */}
-      <div className='flex-grow mt-8'></div>
+      <div className='flex-grow mt-8'>
+        <SidebarLink href={'/dashboard'} icon={Layout} label={'Dashboard'} isCollapsed={isSidebarCollapsed}/>
+        <SidebarLink href={'/inventory'} icon={Archive} label={'Inventory'} isCollapsed={isSidebarCollapsed}/>
+        <SidebarLink href={'/products'} icon={Clipboard} label={'Products'} isCollapsed={isSidebarCollapsed}/>
+        <SidebarLink href={'/users'} icon={User} label={'Users'} isCollapsed={isSidebarCollapsed}/>
+        <SidebarLink href={'/settings'} icon={SlidersHorizontal} label={'Settings'} isCollapsed={isSidebarCollapsed}/>
+        <SidebarLink href={'/expenses'} icon={CircleDollarSign} label={'Expenses'} isCollapsed={isSidebarCollapsed}/>
+      </div>
 
       {/* FOOTER */}
-      <div>
+      <div className={`${isSidebarCollapsed ? 'hidden' : 'block'} mb-10`}>
         <p className='text-center text-xs text-gray-500'>&copy; 2024 ESTOCK</p>
       </div>
     </div>

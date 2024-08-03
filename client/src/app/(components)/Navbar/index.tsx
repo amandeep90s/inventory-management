@@ -1,18 +1,22 @@
 'use client';
 
-import {Bell, Menu, Settings, Sun} from 'lucide-react';
+import {Bell, Menu, Moon, Settings, Sun} from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import {useAppDispatch, useAppSelector} from "@/app/redux";
-import {setIsSidebarCollapsed} from "@/state";
+import {setIsDarkMode, setIsSidebarCollapsed} from "@/state";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
-  const {isSidebarCollapsed} = useAppSelector((state) => state.global);
+  const {isDarkMode, isSidebarCollapsed} = useAppSelector((state) => state.global);
 
   const toggleSidebar = () => {
     dispatch(setIsSidebarCollapsed(!isSidebarCollapsed));
   };
+
+  const toggleDarkMode = () => {
+    dispatch(setIsDarkMode(!isDarkMode))
+  }
 
   return (
     <div className='flex justify-between items-center w-full mb-7'>
@@ -30,7 +34,7 @@ const Navbar = () => {
             name='search'
             id='search'
             placeholder='Start type to search groups &amp; products'
-            className='pl-10 pr-4 py-2 w-50 md:w-80 border-2 border-gray-300 bg-white rounded-lg focus:outline-none focus:border-blue-500'
+            className='pl-10 pr-4 py-2 w-50 md:w-60 border-2 border-gray-300 bg-white rounded-lg focus:outline-none focus:border-blue-500'
           />
           <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
             <Bell className='text-gray-400' size={20}/>
@@ -41,9 +45,8 @@ const Navbar = () => {
       <div className='flex justify-between items-center gap-5'>
         <div className='hidden md:flex justify-between items-center gap-5'>
           <div>
-            <button onClick={() => {
-            }}>
-              <Sun size={24} className='text-gray-500'/>
+            <button onClick={toggleDarkMode}>
+              {isDarkMode ? <Moon size={24} className='text-yellow-500'/> : <Sun size={24} className='text-gray-500'/>}
             </button>
           </div>
           <div className='relative'>
