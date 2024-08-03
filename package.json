@@ -6,6 +6,8 @@
   "scripts": {
     "server:prettier": "cd server && npm run prettier:fix",
     "server:lint": "cd server && npm run lint:fix",
+    "client:prettier": "cd client && npm run prettier:fix",
+    "client:lint": "cd client && npm run lint",
     "prepare": "husky"
   },
   "keywords": [],
@@ -18,7 +20,9 @@
   "lint-staged": {
     "server/**/*.{js,jsx,ts,tsx}": [
       "npm run server:prettier",
-      "npm run server:lint"
+      "npm run server:lint",
+      "npm run client:prettier",
+      "npm run client:lint"
     ]
   }
 }
