@@ -1,0 +1,24 @@
+{
+  "name": "inventory-management",
+  "version": "1.0.0",
+  "description": "# Build a Fullstack Inventory Management Dashboard",
+  "main": "index.js",
+  "scripts": {
+    "server:prettier": "cd server && npm run prettier:fix",
+    "server:lint": "cd server && npm run lint:fix",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.8"
+  },
+  "lint-staged": {
+    "server/**/*.{js,jsx,ts,tsx}": [
+      "npm run server:prettier",
+      "npm run server:lint"
+    ]
+  }
+}
