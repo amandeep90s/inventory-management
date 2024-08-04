@@ -54,4 +54,5 @@ const config: Config = {
 	},
 	plugins: [createThemes(themes)],
 };
+
 export default config;
