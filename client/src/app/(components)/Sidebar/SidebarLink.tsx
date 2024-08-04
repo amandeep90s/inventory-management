@@ -18,9 +18,9 @@ const SidebarLink = ({ href, icon: Icon, label, isCollapsed }: SidebarLinkProps)
 	return (
 		<Link href={href}>
 			<div
-				className={`cursor-pointer flex items-center py-4 ${isCollapsed ? 'justify-center' : 'justify-start px-8'} hover:text-blue-500 hover:bg-blue-100 gap-3 transition-colors ${isActive ? 'bg-blue-200' : ''}`}
+				className={`flex cursor-pointer items-center py-4 ${isCollapsed ? 'justify-center' : 'justify-start px-8'} gap-3 transition-colors hover:bg-blue-100 hover:text-blue-500 ${isActive ? 'bg-blue-200' : ''}`}
 			>
-				<Icon className="w-6 h-6 !text-gray-700" />
+				<Icon className="h-6 w-6 !text-gray-700" />
 				<span className={`${isCollapsed ? 'hidden' : 'inline-block'} font-medium text-gray-700`}>
 					{label}
 				</span>

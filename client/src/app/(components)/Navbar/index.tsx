@@ -19,14 +19,14 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="flex justify-between items-center w-full mb-7">
+		<div className="mb-7 flex w-full items-center justify-between">
 			{/* LEFT AREA */}
-			<div className="flex justify-between items-center gap-5">
+			<div className="flex items-center justify-between gap-5">
 				<button
-					className="px-3 py-3 bg-gray-100 rounded-full hover:bg-blue-100"
+					className="rounded-full bg-gray-100 px-3 py-3 hover:bg-blue-100"
 					onClick={toggleSidebar}
 				>
-					<Menu className="w-4 h-4" />
+					<Menu className="h-4 w-4" />
 				</button>
 				<div className="relative">
 					<input
@@ -34,16 +34,16 @@ const Navbar = () => {
 						name="search"
 						id="search"
 						placeholder="Start type to search groups &amp; products"
-						className="pl-10 pr-4 py-2 w-50 md:w-60 border-2 border-gray-300 bg-white rounded-lg focus:outline-none focus:border-blue-500"
+						className="w-50 rounded-lg border-2 border-gray-300 bg-white py-2 pl-10 pr-4 focus:border-blue-500 focus:outline-none md:w-60"
 					/>
-					<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+					<div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
 						<Bell className="text-gray-400" size={20} />
 					</div>
 				</div>
 			</div>
 			{/* RIGHT AREA */}
-			<div className="flex justify-between items-center gap-5">
-				<div className="hidden md:flex justify-between items-center gap-5">
+			<div className="flex items-center justify-between gap-5">
+				<div className="hidden items-center justify-between gap-5 md:flex">
 					<div>
 						<button onClick={toggleDarkMode}>
 							{isDarkMode ? (
@@ -55,18 +55,18 @@ const Navbar = () => {
 					</div>
 					<div className="relative">
 						<Bell size={24} className="text-gray-500" />
-						<span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-[0.4rem] py-1 text-xs font-semibold leading-none text-red-100 bg-red-400 rounded-full">
+						<span className="absolute -right-2 -top-2 inline-flex items-center justify-center rounded-full bg-red-400 px-[0.4rem] py-1 text-xs font-semibold leading-none text-red-100">
 							3
 						</span>
 					</div>
-					<hr className="w-0 h-7 border border-solid border-1 border-gray-300 mx-3" />
-					<div className="flex items-center gap-3 cursor-pointer">
-						<div className="w-9 h-9">image</div>
+					<hr className="border-1 mx-3 h-7 w-0 border border-solid border-gray-300" />
+					<div className="flex cursor-pointer items-center gap-3">
+						<div className="h-9 w-9">image</div>
 						<span className="font-semibold">Amandeep</span>
 					</div>
 				</div>
 				<Link href={'/settings'}>
-					<Settings size={24} className="text-gray-500 cursor-pointer" />
+					<Settings size={24} className="cursor-pointer text-gray-500" />
 				</Link>
 			</div>
 		</div>

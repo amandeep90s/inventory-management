@@ -28,22 +28,22 @@ const Sidebar = () => {
 		<div className={sidebarClassNames}>
 			{/* TOP LOGO */}
 			<div
-				className={`flex gap-3 justify-between md:justify-normal items-center pt-8 ${isSidebarCollapsed ? 'px-5' : 'px-8'}`}
+				className={`flex items-center justify-between gap-3 pt-8 md:justify-normal ${isSidebarCollapsed ? 'px-5' : 'px-8'}`}
 			>
 				<div>logo</div>
-				<h1 className={`font-extrabold text-2xl ${isSidebarCollapsed ? 'hidden' : 'block'}`}>
+				<h1 className={`text-2xl font-extrabold ${isSidebarCollapsed ? 'hidden' : 'block'}`}>
 					ESTOCK
 				</h1>
 				<button
-					className="md:hidden px-3 py-3 bg-gray-100 rounded-full hover:bg-blue-100"
+					className="rounded-full bg-gray-100 px-3 py-3 hover:bg-blue-100 md:hidden"
 					onClick={toggleSidebar}
 				>
-					<Menu className="w-4 h-4" />
+					<Menu className="h-4 w-4" />
 				</button>
 			</div>
 
 			{/* LINKS */}
-			<div className="flex-grow mt-8">
+			<div className="mt-8 flex-grow">
 				<SidebarLink
 					href={'/dashboard'}
 					icon={Layout}

@@ -23,8 +23,7 @@
       "npm run server:lint"
     ],
     "client/**/*.{js,jsx,ts,tsx}": [
-      "npm run client:prettier",
-      "npm run client:lint"
+      "npm run client:prettier"
     ]
   }
 }
