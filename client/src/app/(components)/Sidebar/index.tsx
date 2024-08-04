@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import React from 'react';
 import SidebarLink from './SidebarLink';
+import Image from 'next/image';
 
 const Sidebar = () => {
 	const dispatch = useAppDispatch();
@@ -30,7 +31,13 @@ const Sidebar = () => {
 			<div
 				className={`flex items-center justify-between gap-3 pt-8 md:justify-normal ${isSidebarCollapsed ? 'px-5' : 'px-8'}`}
 			>
-				<div>logo</div>
+				<Image
+					src="https://s3-inventorymanagement.s3.us-east-2.amazonaws.com/logo.png"
+					alt="edstock-logo"
+					width={27}
+					height={27}
+					className="w-8 rounded"
+				/>
 				<h1 className={`text-2xl font-extrabold ${isSidebarCollapsed ? 'hidden' : 'block'}`}>
 					ESTOCK
 				</h1>

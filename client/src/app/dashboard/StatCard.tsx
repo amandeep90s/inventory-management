@@ -1,5 +1,5 @@
-import React from 'react';
 import { LucideIcon } from 'lucide-react';
+import React from 'react';
 
 type StatDetail = {
 	title: string;
@@ -10,7 +10,7 @@ type StatDetail = {
 
 type StatCardProps = {
 	title: string;
-	primaryIcon: React.ReactElement;
+	primaryIcon: JSX.Element;
 	details: StatDetail[];
 	dateRange: string;
 };
@@ -24,20 +24,17 @@ const StatCard = ({ title, primaryIcon, details, dateRange }: StatCardProps) => 
 	const getChangeColor = (value: number) => (value >= 0 ? 'text-green-500' : 'text-red-500');
 
 	return (
-		<div
-			className={
-				'xl-row-span-2 col-span-1 flex flex-col justify-between rounded-2xl bg-white shadow-md md:row-span-1'
-			}
-		>
-			{/*	Header*/}
+		<div className="col-span-1 flex flex-col justify-between rounded-2xl bg-white shadow-md md:row-span-1 xl:row-span-2">
+			{/* HEADER */}
 			<div>
 				<div className="mb-2 flex items-center justify-between px-5 pt-4">
-					<h2 className={'text-lg font-semibold text-gray-700'}>{title}</h2>
-					<span className={'text-xs text-gray-400'}>{dateRange}</span>
+					<h2 className="text-lg font-semibold text-gray-700">{title}</h2>
+					<span className="text-xs text-gray-400">{dateRange}</span>
 				</div>
 				<hr />
 			</div>
-			{/*	Body*/}
+
+			{/* BODY */}
 			<div className="mb-6 flex items-center justify-around gap-4 px-5">
 				<div className="rounded-full border-[1px] border-sky-300 bg-blue-50 p-5">{primaryIcon}</div>
 				<div className="flex-1">
